@@ -7,7 +7,16 @@
 
 import UIKit
 
+protocol MedicationTableViewCellDelegate: AnyObject{
+    func medicationTakenButtonTapped(medication: Medication, wasTaken: Bool)
+}
+
 class MedicineTableViewCell: UITableViewCell {
+    //MARK: - Properties
+    weak var delegate: MedicationTableViewCellDelegate?
+    private var medication: Medication?
+    private var wasTakenToday: Bool = false
+    
     //MARK: - IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -15,12 +24,19 @@ class MedicineTableViewCell: UITableViewCell {
     
     //MARK: - IBActions
     @IBAction func wasTakenButtonTapped(_ sender: Any) {
-        print("was taken button tapped")
+        guard let medication = medication else { return }
+        
+        wasTakenToday.toggle()
+        delegate?.medicationTakenButtonTapped(medication: medication, wasTaken: wasTakenToday)
     }
     
     func configure(with medication: Medication){
+        self.medication = medication
+        wasTakenToday = medication.wasTakenToday()
         nameLabel.text = medication.name
         timeLabel.text = DateFormatter.medicationTime.string(from: medication.timeOfDay ?? Date())
+        let image = wasTakenToday ? UIImage(systemName: "checkmark.square") : UIImage(systemName: "square")
+        wasTakenButton.setImage(image, for: .normal)
     }
     
 }//End of class

@@ -9,6 +9,107 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Survey View Controller-->
+        <scene sceneID="ede-0v-HUq">
+            <objects>
+                <viewController storyboardIdentifier="surveryVC" id="Ml9-26-eA1" customClass="SurveyViewController" customModule="MedicationManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uWA-gT-tl5">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="86" translatesAutoresizingMaskIntoConstraints="NO" id="m0s-w1-rA6">
+                                <rect key="frame" x="70" y="188.5" width="274.5" height="529"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today I am feeling" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UJa-bB-7uI">
+                                        <rect key="frame" x="0.0" y="0.0" width="274.5" height="43"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="lRT-K2-XiC">
+                                        <rect key="frame" x="87" y="129" width="100" height="400"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ve-AH-gNK">
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="7mS-bZ-h2L"/>
+                                                    <constraint firstAttribute="width" secondItem="1ve-AH-gNK" secondAttribute="height" multiplier="1:1" id="hxl-NA-gtN"/>
+                                                    <constraint firstAttribute="width" constant="100" id="i8S-QN-xdI"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="😊"/>
+                                                <connections>
+                                                    <action selector="emojiTapped:" destination="Ml9-26-eA1" eventType="touchUpInside" id="LBp-eo-jAp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaT-0r-fDS">
+                                                <rect key="frame" x="0.0" y="150" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="4wK-2h-vO3"/>
+                                                    <constraint firstAttribute="width" secondItem="HaT-0r-fDS" secondAttribute="height" multiplier="1:1" id="ON8-LE-iQ5"/>
+                                                    <constraint firstAttribute="height" constant="100" id="eNn-Hc-k0D"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="😐"/>
+                                                <connections>
+                                                    <action selector="emojiTapped:" destination="Ml9-26-eA1" eventType="touchUpInside" id="TP0-DB-hCW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ib9-Sj-2tV">
+                                                <rect key="frame" x="0.0" y="300" width="100" height="100"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="btp-5D-HP8"/>
+                                                    <constraint firstAttribute="width" secondItem="ib9-Sj-2tV" secondAttribute="height" multiplier="1:1" id="exi-P3-MP3"/>
+                                                    <constraint firstAttribute="height" constant="100" id="zf2-js-8tp"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="🥵"/>
+                                                <connections>
+                                                    <action selector="emojiTapped:" destination="Ml9-26-eA1" eventType="touchUpInside" id="ud4-VJ-9Sv"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TgE-kU-JSL">
+                                <rect key="frame" x="20" y="44" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="TgE-kU-JSL" secondAttribute="height" multiplier="1:1" id="UlT-Zs-Hlx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal">
+                                    <imageReference key="image" image="xmark.circle.fill" catalog="system" symbolScale="large" renderingMode="hierarchical">
+                                        <hierarchicalColors>
+                                            <color systemColor="labelColor"/>
+                                            <color systemColor="secondaryLabelColor"/>
+                                            <color systemColor="tertiaryLabelColor"/>
+                                        </hierarchicalColors>
+                                    </imageReference>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="Ml9-26-eA1" eventType="touchUpInside" id="wpM-Ck-nsH"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="10m-jW-FXU"/>
+                        <color key="backgroundColor" systemColor="systemCyanColor"/>
+                        <constraints>
+                            <constraint firstItem="m0s-w1-rA6" firstAttribute="centerY" secondItem="10m-jW-FXU" secondAttribute="centerY" id="Vbb-zN-SQV"/>
+                            <constraint firstItem="TgE-kU-JSL" firstAttribute="top" secondItem="10m-jW-FXU" secondAttribute="top" id="mzG-Le-Vvh"/>
+                            <constraint firstItem="TgE-kU-JSL" firstAttribute="leading" secondItem="10m-jW-FXU" secondAttribute="leading" constant="20" id="oP4-sD-1nE"/>
+                            <constraint firstItem="m0s-w1-rA6" firstAttribute="centerX" secondItem="10m-jW-FXU" secondAttribute="centerX" id="vL5-KV-fqx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eJx-8f-zLe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-100.00000000000001" y="-646.20535714285711"/>
+        </scene>
         <!--Medication List View Controller-->
         <scene sceneID="kdr-1b-7MF">
             <objects>
@@ -17,8 +118,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MDA-pz-hdm">
+                                <rect key="frame" x="0.0" y="88" width="414" height="80"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vfi-D9-cPd">
+                                        <rect key="frame" x="20.5" y="14.5" width="373" height="51"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Today I am feeling: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0NJ-h2-SGq">
+                                                <rect key="frame" x="0.0" y="0.0" width="314" height="51"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i2a-ra-Vfd">
+                                                <rect key="frame" x="322" y="0.0" width="51" height="51"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="i2a-ra-Vfd" secondAttribute="height" multiplier="1:1" id="xk6-Z4-qZs"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="❓">
+                                                    <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="surveyButtonTapped:" destination="QnO-Rs-5CC" eventType="touchUpInside" id="efI-qm-qaF"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemCyanColor"/>
+                                <constraints>
+                                    <constraint firstItem="Vfi-D9-cPd" firstAttribute="centerY" secondItem="MDA-pz-hdm" secondAttribute="centerY" id="K1J-mD-69l"/>
+                                    <constraint firstItem="Vfi-D9-cPd" firstAttribute="width" secondItem="MDA-pz-hdm" secondAttribute="width" multiplier="0.9" id="OOk-83-9YL"/>
+                                    <constraint firstAttribute="height" constant="80" id="P5p-wJ-K2D"/>
+                                    <constraint firstItem="Vfi-D9-cPd" firstAttribute="centerX" secondItem="MDA-pz-hdm" secondAttribute="centerX" id="STm-le-PXX"/>
+                                </constraints>
+                            </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="0Lb-lJ-qep">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="168" width="414" height="694"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicationCell" rowHeight="80" id="Psf-I7-otT" customClass="MedicineTableViewCell" customModule="MedicationManager" customModuleProvider="target">
@@ -97,10 +234,13 @@
                         <viewLayoutGuide key="safeArea" id="bUl-T0-Cfg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="0Lb-lJ-qep" firstAttribute="top" secondItem="bUl-T0-Cfg" secondAttribute="top" id="SQ1-O9-755"/>
+                            <constraint firstItem="0Lb-lJ-qep" firstAttribute="top" secondItem="MDA-pz-hdm" secondAttribute="bottom" id="6re-zP-rGL"/>
+                            <constraint firstItem="MDA-pz-hdm" firstAttribute="trailing" secondItem="bUl-T0-Cfg" secondAttribute="trailing" id="CAZ-Dg-6V4"/>
+                            <constraint firstItem="MDA-pz-hdm" firstAttribute="top" secondItem="bUl-T0-Cfg" secondAttribute="top" id="T8s-IT-SJv"/>
                             <constraint firstItem="bUl-T0-Cfg" firstAttribute="bottom" secondItem="0Lb-lJ-qep" secondAttribute="bottom" id="TiC-KV-HZh"/>
                             <constraint firstItem="0Lb-lJ-qep" firstAttribute="leading" secondItem="bUl-T0-Cfg" secondAttribute="leading" id="YSt-cA-MyN"/>
                             <constraint firstItem="bUl-T0-Cfg" firstAttribute="trailing" secondItem="0Lb-lJ-qep" secondAttribute="trailing" id="h2V-rw-16M"/>
+                            <constraint firstItem="MDA-pz-hdm" firstAttribute="leading" secondItem="bUl-T0-Cfg" secondAttribute="leading" id="zDn-3t-wB3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IBD-DR-nfu">
@@ -112,6 +252,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="moodSurveyButton" destination="i2a-ra-Vfd" id="5jw-9C-OA5"/>
                         <outlet property="tableView" destination="0Lb-lJ-qep" id="IxP-Tb-6Ap"/>
                     </connections>
                 </viewController>
@@ -202,6 +343,7 @@
     <resources>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="square" catalog="system" width="128" height="114"/>
+        <image name="xmark.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
@@ -210,6 +352,9 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -20,6 +20,10 @@
 		C923EFEB280E05FC00367555 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923EFEA280E05FC00367555 /* CoreDataStack.swift */; };
 		C923EFED280E094600367555 /* Medication+Convinience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923EFEC280E094600367555 /* Medication+Convinience.swift */; };
 		C923EFEF280E12A600367555 /* DateFormatter+Extras.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923EFEE280E12A600367555 /* DateFormatter+Extras.swift */; };
+		C923F04A280F332600367555 /* TakenDate+Convinience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F049280F332600367555 /* TakenDate+Convinience.swift */; };
+		C923F04C280F5CAC00367555 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F04B280F5CAC00367555 /* SurveyViewController.swift */; };
+		C923F04E280F5F0F00367555 /* MoodSurvey+Convinience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F04D280F5F0F00367555 /* MoodSurvey+Convinience.swift */; };
+		C923F050280F5FDB00367555 /* SurveyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F04F280F5FDB00367555 /* SurveyController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,10 @@
 		C923EFEA280E05FC00367555 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		C923EFEC280E094600367555 /* Medication+Convinience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Medication+Convinience.swift"; sourceTree = "<group>"; };
 		C923EFEE280E12A600367555 /* DateFormatter+Extras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter+Extras.swift"; sourceTree = "<group>"; };
+		C923F049280F332600367555 /* TakenDate+Convinience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TakenDate+Convinience.swift"; sourceTree = "<group>"; };
+		C923F04B280F5CAC00367555 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
+		C923F04D280F5F0F00367555 /* MoodSurvey+Convinience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodSurvey+Convinience.swift"; sourceTree = "<group>"; };
+		C923F04F280F5FDB00367555 /* SurveyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +121,7 @@
 			children = (
 				C923EFDE280DD5CB00367555 /* MedicationListViewController.swift */,
 				C923EFE2280DFFAB00367555 /* MedicationDetailViewController.swift */,
+				C923F04B280F5CAC00367555 /* SurveyViewController.swift */,
 				C923EFE4280E006600367555 /* CustomView */,
 			);
 			path = ViewControllers;
@@ -122,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				C923EFE6280E029500367555 /* MedicationController.swift */,
+				C923F04F280F5FDB00367555 /* SurveyController.swift */,
 			);
 			path = ModelControllers;
 			sourceTree = "<group>";
@@ -148,6 +158,8 @@
 				C923EFCA280DD35D00367555 /* MedicationManager.xcdatamodeld */,
 				C923EFEA280E05FC00367555 /* CoreDataStack.swift */,
 				C923EFEC280E094600367555 /* Medication+Convinience.swift */,
+				C923F049280F332600367555 /* TakenDate+Convinience.swift */,
+				C923F04D280F5F0F00367555 /* MoodSurvey+Convinience.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -230,9 +242,13 @@
 				C923EFCC280DD35D00367555 /* MedicationManager.xcdatamodeld in Sources */,
 				C923EFE7280E029500367555 /* MedicationController.swift in Sources */,
 				C923EFC4280DD35D00367555 /* SceneDelegate.swift in Sources */,
+				C923F04A280F332600367555 /* TakenDate+Convinience.swift in Sources */,
 				C923EFE1280DD66A00367555 /* MedicineTableViewCell.swift in Sources */,
 				C923EFEB280E05FC00367555 /* CoreDataStack.swift in Sources */,
+				C923F04E280F5F0F00367555 /* MoodSurvey+Convinience.swift in Sources */,
+				C923F04C280F5CAC00367555 /* SurveyViewController.swift in Sources */,
 				C923EFEF280E12A600367555 /* DateFormatter+Extras.swift in Sources */,
+				C923F050280F5FDB00367555 /* SurveyController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
