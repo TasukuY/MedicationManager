@@ -24,6 +24,8 @@
 		C923F04C280F5CAC00367555 /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F04B280F5CAC00367555 /* SurveyViewController.swift */; };
 		C923F04E280F5F0F00367555 /* MoodSurvey+Convinience.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F04D280F5F0F00367555 /* MoodSurvey+Convinience.swift */; };
 		C923F050280F5FDB00367555 /* SurveyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F04F280F5FDB00367555 /* SurveyController.swift */; };
+		C923F0812810A2A400367555 /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F0802810A2A400367555 /* NotificationScheduler.swift */; };
+		C923F0842810B5CD00367555 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C923F0832810B5CD00367555 /* Strings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		C923F04B280F5CAC00367555 /* SurveyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		C923F04D280F5F0F00367555 /* MoodSurvey+Convinience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoodSurvey+Convinience.swift"; sourceTree = "<group>"; };
 		C923F04F280F5FDB00367555 /* SurveyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurveyController.swift; sourceTree = "<group>"; };
+		C923F0802810A2A400367555 /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
+		C923F0832810B5CD00367555 /* Strings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,8 +83,10 @@
 			isa = PBXGroup;
 			children = (
 				C923EFDD280DD41900367555 /* Models */,
-				C923EFDA280DD40000367555 /* Controllers */,
 				C923EFD9280DD3F500367555 /* Views */,
+				C923EFDA280DD40000367555 /* Controllers */,
+				C923F0822810B5BB00367555 /* Strings */,
+				C923F07F2810A28900367555 /* Notification */,
 				C923EFD8280DD36F00367555 /* Resources */,
 			);
 			path = MedicationManager;
@@ -164,6 +170,22 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		C923F07F2810A28900367555 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				C923F0802810A2A400367555 /* NotificationScheduler.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		C923F0822810B5BB00367555 /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				C923F0832810B5CD00367555 /* Strings.swift */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -237,11 +259,13 @@
 			files = (
 				C923EFED280E094600367555 /* Medication+Convinience.swift in Sources */,
 				C923EFE3280DFFAB00367555 /* MedicationDetailViewController.swift in Sources */,
+				C923F0842810B5CD00367555 /* Strings.swift in Sources */,
 				C923EFC2280DD35D00367555 /* AppDelegate.swift in Sources */,
 				C923EFDF280DD5CB00367555 /* MedicationListViewController.swift in Sources */,
 				C923EFCC280DD35D00367555 /* MedicationManager.xcdatamodeld in Sources */,
 				C923EFE7280E029500367555 /* MedicationController.swift in Sources */,
 				C923EFC4280DD35D00367555 /* SceneDelegate.swift in Sources */,
+				C923F0812810A2A400367555 /* NotificationScheduler.swift in Sources */,
 				C923F04A280F332600367555 /* TakenDate+Convinience.swift in Sources */,
 				C923EFE1280DD66A00367555 /* MedicineTableViewCell.swift in Sources */,
 				C923EFEB280E05FC00367555 /* CoreDataStack.swift in Sources */,

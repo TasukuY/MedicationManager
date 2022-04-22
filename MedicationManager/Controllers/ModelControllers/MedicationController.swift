@@ -12,6 +12,8 @@ class MedicationController {
     
     //MARK: - Properties
     static let shared = MedicationController()
+    let notificationScheduler = NotificationScheduler()
+    
     private init() {}
     private lazy var fetchRequest: NSFetchRequest<Medication> = {
         let request = NSFetchRequest<Medication>(entityName: "Medication")
@@ -28,6 +30,8 @@ class MedicationController {
         let medication = Medication(name: name, timeOfDay: timeOfday)
         notTakenMeds.append(medication)
         CoreDataStack.saveContext()
+        //Schedule notification
+        notificationScheduler.scheduleNotification(for: medication)
     }
     
     func fetchMedications(){
@@ -40,6 +44,8 @@ class MedicationController {
         medication.name = name
         medication.timeOfDay = timeOfDay
         CoreDataStack.saveContext()
+        notificationScheduler.cancelNotification(for: medication)
+        notificationScheduler.scheduleNotification(for: medication)
     }
     
     func markMedicationTaken(medication: Medication, wasTaken: Bool){
@@ -66,6 +72,22 @@ class MedicationController {
         CoreDataStack.saveContext()
     }
     
-    func deleteMedication(){}
+    func markMedicationTaken(with id: String) {
+        guard let medication = notTakenMeds.first(where: { $0.id == id })
+        else { return }
+        
+        markMedicationTaken(medication: medication, wasTaken: true)
+    }
+    
+    func deleteMedication(_ medication: Medication){
+        if let index = notTakenMeds.firstIndex(of: medication){
+            notTakenMeds.remove(at: index)
+        }else if let index = takenMeds.firstIndex(of: medication){
+            takenMeds.remove(at: index)
+        }
+        CoreDataStack.context.delete(medication)
+        CoreDataStack.saveContext()
+        notificationScheduler.cancelNotification(for: medication)
+    }
     
 }//End of class

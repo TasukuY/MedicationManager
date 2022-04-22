@@ -15,12 +15,21 @@ class MedicationDetailViewController: UIViewController {
     
     var medication: Medication?
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         updateView()
+        
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reminderFiered),
+                                               name: NSNotification.Name(rawValue: Strings.MedicationReminderReceived),
+                                               object: nil)
     }
-    
+     
     //MARK: - IBActions
     @IBAction func saveButtonTapped(_ sender: Any) {
         guard let name = nameTextField.text,
@@ -32,6 +41,8 @@ class MedicationDetailViewController: UIViewController {
             MedicationController.shared.createMedication(with: name, and: timeOfDaty)
         }
         navigationController?.popViewController(animated: true)
+        
+        
     }
     
     //MARK: - Methods
@@ -43,6 +54,14 @@ class MedicationDetailViewController: UIViewController {
             datePicker.date = timeOfDay
         }else{
             title = "Add Medication"
+        }
+    }
+    
+    @objc private func reminderFiered(){
+        self.view.backgroundColor = .systemRed
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.view.backgroundColor = .systemOrange
         }
     }
     

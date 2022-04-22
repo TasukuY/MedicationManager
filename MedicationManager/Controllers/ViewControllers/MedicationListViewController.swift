@@ -13,27 +13,45 @@ class MedicationListViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var moodSurveyButton: UIButton!
     
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         MedicationController.shared.fetchMedications()
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reminderFiered),
+                                               name: NSNotification.Name(Strings.MedicationReminderReceived),
+                                               object: nil)
         guard let survey = SurveyController.shared.fetchTodaySurvey() else { return }
         
         moodSurveyButton.setTitle(survey.mentalState, for: .normal)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
     }
+
     
     //MARK: - IBActions
     @IBAction func addButtonTapped(_ sender: Any) {}
     
     @IBAction func surveyButtonTapped(_ sender: Any) {
-        guard let surveyViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: "surveryVC") as? SurveyViewController else { return }
+        guard let surveyViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(identifier: Strings.surveyVC) as? SurveyViewController else { return }
         surveyViewController.delegate = self
         navigationController?.present(surveyViewController, animated: true, completion: nil)
+    }
+    
+    @objc private func reminderFiered(){
+        tableView.backgroundColor = .systemRed
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
+            self.tableView.backgroundColor = .systemBackground
+        }
     }
     
     // MARK: - Navigation
@@ -75,9 +93,19 @@ extension MedicationListViewController: UITableViewDataSource{
             return nil
         }
     }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let medicationToDelete = MedicationController.shared.sections[indexPath.section][indexPath.row]
+            MedicationController.shared.deleteMedication(medicationToDelete)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+    
 }
 
 extension MedicationListViewController: UITableViewDelegate{}
+
 extension MedicationListViewController: MedicationTableViewCellDelegate{
     func medicationTakenButtonTapped(medication: Medication, wasTaken: Bool) {
         MedicationController.shared.markMedicationTaken(medication: medication, wasTaken: wasTaken)
